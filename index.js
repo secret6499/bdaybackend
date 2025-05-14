@@ -7,6 +7,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const url = "https://rbdaybackend.onrender.com";
+const interval = 30000;
+
+function reloadWebsite() {
+  axios
+    .get(url)
+    .then((response) => {
+      console.log("website reloded");
+    })
+    .catch((error) => {
+      console.error(`Error : ${error.message}`);
+    });
+}
+
+setInterval(reloadWebsite, interval);
 app.get('/', (req, res) => {
     res.send('Hello World!');
     }
