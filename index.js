@@ -8,7 +8,6 @@ app.use(cors());
 app.use(express.json());
 
 
-setInterval(reloadWebsite, interval);
 app.get('/', (req, res) => {
     res.send('Hello World!');
     }
